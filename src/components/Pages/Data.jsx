@@ -3,52 +3,40 @@ import Header from '../shared/Header';
 import axios from 'axios';
 
 const Data = () => {
-    const API = ''
+    let search = 'the+matrix';
+    //let API = 'http://www.omdbapi.com/?apikey=' + process.env.REACT_APP_OMDB_API_KEY + '&?t=' + search;
     const [data, setData] = useState([]);
-    const posts = useMemo(() => data, [data]);
-    const [order, setOrder] = useState([]);
-
+    const movie = useMemo(() => data, [data]);
+    //http://www.omdbapi.com/?i=tt3896198&apikey=9eca256d
     useEffect(() => {
-        axios.get(API)
+        axios.get('http://www.omdbapi.com/?t=' + search + '&apikey=' + process.env.REACT_APP_OMDB_API_KEY)
              .then(resp => {
                  setData(resp.data);
              });
     }, []);
 
-    const sort = event => {
-        event.persist();
-        const { name, type } = event.target.dataset;
-
-        <TODO>
-            Check if i can use this function.
-        </TODO>
-        let sorted;
-    
-        if (type === "int") {
-            sorted = data.sort((a, b) => Number(a[name]) - Number(b[name]));
-        } else {
-            sorted = data.sort((a, b) => {
-                if (a[name].toLowerCase() < b[name].toLowerCase()) 
-                    return -1;
-                if (a[name].toLowerCase() > b[name].toLowerCase()) 
-                    return 1;
-                return 0;
-            });
-        }
-
-        if (order) {
-            sorted = sorted.reverse();
-            setOrder(false);
-        } else {
-            setOrder(true);
-        }
-
-        setData([...sorted]);
-    };
-
+    //Title, Year, Released, Runtime, Director, Actors, Plot, Poster
     return (
         <>
-
+            <div>
+                <div className="col my-5">
+                    <div 
+                        className="card my-2"
+                        style={{ width:'30rem' }}
+                    >
+                        <div className="card-body">
+                            <h3 className="card-title">{movie.Title}</h3>
+                            <h4 className="card-subtitle">Release Date: {movie.Released}</h4>
+                            <ul className="list-group list-group-flush">  
+                                <li className="list-group-item">Runtime: {movie.Runtime}</li>
+                                <li className="list-group-item">Director: {movie.Director}</li>
+                                <li className="list-group-item">Actors: {movie.Actors}</li>
+                                <li className="list-group-item">Plot: {movie.Plot}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </>
     )
 }

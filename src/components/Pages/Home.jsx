@@ -3,6 +3,7 @@ import Header from '../shared/Header';
 
 const Home = () => {
     return ( 
+            
         <>
             <div className="container">
                 <Header title="COMP2068 React Project"/>
