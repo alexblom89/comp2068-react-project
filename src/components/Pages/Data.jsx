@@ -24,20 +24,23 @@ const Data = () => {
         </TODO>
         let sorted;
     
-        if (type === "int")
+        if (type === "int") {
             sorted = data.sort((a, b) => Number(a[name]) - Number(b[name]));
-        else
+        } else {
             sorted = data.sort((a, b) => {
-        if (a[name].toLowerCase() < b[name].toLowerCase()) return -1;
-        if (a[name].toLowerCase() > b[name].toLowerCase()) return 1;
-        return 0;
-        });
+                if (a[name].toLowerCase() < b[name].toLowerCase()) 
+                    return -1;
+                if (a[name].toLowerCase() > b[name].toLowerCase()) 
+                    return 1;
+                return 0;
+            });
+        }
 
         if (order) {
-        sorted = sorted.reverse();
-        setOrder(false);
+            sorted = sorted.reverse();
+            setOrder(false);
         } else {
-        setOrder(true);
+            setOrder(true);
         }
 
         setData([...sorted]);
@@ -45,7 +48,9 @@ const Data = () => {
 
     return (
         <>
-            
+
         </>
     )
 }
+
+export default Data;
