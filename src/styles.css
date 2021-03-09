@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+#header {
+    background-color: #03A9F4;
+    max-width: '960px';
+}
+
+#headerTitle {
+    color: #212121;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    color:#B3E5FC;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: wheat;
+}
+
+.searchBtn {
+    background: #03A9F4;
+    color: #212121;
+}
+
+.root {
+    background-color: wheat;
+}
