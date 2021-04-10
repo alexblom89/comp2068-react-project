@@ -13,7 +13,7 @@ const Data = () => {
     }
 
     const handleClick = () => {
-        axios.get('http://www.omdbapi.com/?t=' + search + '&apikey=' + process.env.REACT_APP_OMDB_API_KEY)
+        axios.get('https://www.omdbapi.com/?t=' + search + '&apikey=' + process.env.REACT_APP_OMDB_API_KEY)
                 .then(resp => {
                     setData(resp.data);
         });
