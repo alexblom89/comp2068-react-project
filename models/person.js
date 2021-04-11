@@ -21,4 +21,4 @@ const PersonSchema = new mongoose.Schema({
     timestamps: true
 });
 
-module.exports = mongoose.model('Movie', MovieSchema);
+module.exports = mongoose.model('Person', PersonSchema);

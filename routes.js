@@ -1,4 +1,4 @@
 module.exports = router => {
-    require('./routes/genres')(router);
+    require('./routes/people')(router);
     return router;
 }
