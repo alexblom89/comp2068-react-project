@@ -1,3 +1,7 @@
+# COMP2068 Javascript Frameworks React Project
+The purpose of this project is to create a React application using React Router, component design, and an API to allow a user to interact with some data.
+The app allows a user to search for a movie using the [Open Movie Database](https://www.omdbapi.com), which then displays the movie's information and poster.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
